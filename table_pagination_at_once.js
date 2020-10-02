@@ -1,4 +1,4 @@
-import { d as defineStanzaElement } from './stanza-element-dea19264.js';
+import { d as defineStanzaElement } from './stanza-element-e6f964f6.js';
 import './table_body.js';
 
 function tablePagination(stanza, params) {
@@ -288,11 +288,73 @@ function tablePagination(stanza, params) {
     waitingTimer = setInterval(checkChildStanza, 100);
 }
 
-const metadata = {"@context":{"stanza":"http://togostanza.org/resource/stanza#"},"@id":"table_pagination_at_once","stanza:label":"Table pagination metastanza - at once data loading","stanza:definition":"Metastanza for table pagination with slider, for API with slow response times that you don't want to run repeatedly. First, child-table-stanza gets all data (limit: endpoint limit rows) at once by API and renders all table rows, then hides rows by pagination.","stanza:parameter":[{"stanza:key":"table_stanza","stanza:example":"https://sparql-support.dbcls.jp/stanza/table_body/","stanza:description":"table stanza for all data (need 'tbody' tag in the table)","stanza:required":true},{"stanza:key":"table_stanza_params","stanza:example":"params='dataset=DS801_1' table_data_api='https://sparql-support.dbcls.jp/rest/api/protein_list' limit='none'","stanza:description":"parameters for table stanza","stanza:required":false},{"stanza:key":"page_opt","stanza:example":"10,20,50,100","stanza:description":"page size list","stanza:required":false},{"stanza:key":"slider","stanza:example":"1","stanza:description":"slider on/off","stanza:required":false},{"stanza:key":"top_button","stanza:example":"1","stanza:description":"top page button on/off","stanza:required":false},{"stanza:key":"bottom_button","stanza:example":"","stanza:description":"bottom page button on/off","stanza:required":false},{"stanza:key":"button_align","stanza:example":"center","stanza:description":"page button align (left, center, right), when 'slidr' off.","stanza:required":false}],"stanza:usage":"<togostanza-table_pagination_at_once></togostanza-table_pagination_at_once>","stanza:type":"MetaStanza","stanza:context":"","stanza:display":"","stanza:provider":"DBCLS","stanza:license":"MIT","stanza:author":"Moriya, Yuki","stanza:address":"moriya@dbcls.rois.ac.jp","stanza:contributor":[],"stanza:created":"2020-05-27","stanza:updated":"2020-05-27"};
-const outer    = null;
+var metadata = {
+	"@context": {
+	stanza: "http://togostanza.org/resource/stanza#"
+},
+	"@id": "table_pagination_at_once",
+	"stanza:label": "Table pagination metastanza - at once data loading",
+	"stanza:definition": "Metastanza for table pagination with slider, for API with slow response times that you don't want to run repeatedly. First, child-table-stanza gets all data (limit: endpoint limit rows) at once by API and renders all table rows, then hides rows by pagination.",
+	"stanza:parameter": [
+	{
+		"stanza:key": "table_stanza",
+		"stanza:example": "https://sparql-support.dbcls.jp/stanza/table_body/",
+		"stanza:description": "table stanza for all data (need 'tbody' tag in the table)",
+		"stanza:required": true
+	},
+	{
+		"stanza:key": "table_stanza_params",
+		"stanza:example": "params='dataset=DS801_1' table_data_api='https://sparql-support.dbcls.jp/rest/api/protein_list' limit='none'",
+		"stanza:description": "parameters for table stanza",
+		"stanza:required": false
+	},
+	{
+		"stanza:key": "page_opt",
+		"stanza:example": "10,20,50,100",
+		"stanza:description": "page size list",
+		"stanza:required": false
+	},
+	{
+		"stanza:key": "slider",
+		"stanza:example": "1",
+		"stanza:description": "slider on/off",
+		"stanza:required": false
+	},
+	{
+		"stanza:key": "top_button",
+		"stanza:example": "1",
+		"stanza:description": "top page button on/off",
+		"stanza:required": false
+	},
+	{
+		"stanza:key": "bottom_button",
+		"stanza:example": "",
+		"stanza:description": "bottom page button on/off",
+		"stanza:required": false
+	},
+	{
+		"stanza:key": "button_align",
+		"stanza:example": "center",
+		"stanza:description": "page button align (left, center, right), when 'slidr' off.",
+		"stanza:required": false
+	}
+],
+	"stanza:usage": "<togostanza-table_pagination_at_once></togostanza-table_pagination_at_once>",
+	"stanza:type": "MetaStanza",
+	"stanza:context": "",
+	"stanza:display": "",
+	"stanza:provider": "DBCLS",
+	"stanza:license": "MIT",
+	"stanza:author": "Moriya, Yuki",
+	"stanza:address": "moriya@dbcls.rois.ac.jp",
+	"stanza:contributor": [
+],
+	"stanza:created": "2020-05-27",
+	"stanza:updated": "2020-05-27"
+};
 
-const templates = [
-    ["stanza.html", {"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+var templates = [
+  ["stanza.html", {"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var helper, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
           return parent[propertyName];
@@ -303,8 +365,10 @@ const templates = [
   return "<style>\ndiv.main {\n      font-family: \"Arial\",san-serif;\n}\ndiv#paginationTop, div#paginationBottom {\n    text-align: "
     + container.escapeExpression(((helper = (helper = lookupProperty(helpers,"button_align") || (depth0 != null ? lookupProperty(depth0,"button_align") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"button_align","hash":{},"data":data,"loc":{"start":{"line":6,"column":16},"end":{"line":6,"column":32}}}) : helper)))
     + ";\n    clear: both;\n    position: relative;\n}\ndiv.page_slider_div {\n    width: 100%;\n    height: 20px;\n    margin: 10px 0px 20px 0px;\n    text-align: left;\n}\ndiv.page_slider_bar {\n    width: calc(100% - 40px);\n    margin-left: 20px;\n    background-color: #bbbbbb;  /* slider bar color */\n    height: 4px;\n    position: relative;\n    top: 8px;\n}\nul.page_button_ul {\n    display: inline-block;\n    padding: 0px 20px 0px 20px;\n}\nul.page_slider_knob_ul {\n    margin: 0px;\n    display: inline-block;\n    padding: 0px;\n    position: relative;\n    top: -4px;\n}\nli.page_slider_knob, li.page_button {\n    background-color: #b6c769; /* button default bg color */\n    color: #ffffff;            /* button default font color */\n    text-align: center;\n    height: 20px;\n    padding-left: 14px;\n    padding-right: 14px;\n    list-style: none;\n    cursor: pointer;\n    user-select: none;\n    display : table-cell;\n    vertical-align: middle;\n    transform: translateX(0px);  /* for z-index conflict of slider range object */\n}\nli.current_button, li.onmouse_button{\n    background-color: #7b8a38; /* button active bg color */\n}\nli.inactive_button{\n    background-color: #cccccc; /* button inactive bg color */\n}\nli.current_button, li.page_slider_knob, li.inactive_button{\n    cursor: default;\n}\nli.page_slider_knob {\n    border-radius: 10px;\n}\nli.prev_button {\n    transform: translateX(-10px);\n    border-radius: 10px;  \n}\nli.next_button {\n    transform: translateX(10px);\n    border-radius: 10px;\n}\nli.first_button {\n    transform: translateX(-20px);\n    border-radius: 10px;  \n}\nli.last_button{\n    transform: translateX(20px);\n    border-radius: 10px;\n}\nli.page_button_left {\n    padding-left: 24px;\n    border-radius: 10px 0px 0px 10px;\n}\nli.page_button_right {\n    padding-right: 24px;\n    border-radius: 0px 10px 10px 0px;\n}\ndiv.float_left {\n    float: left;\n}\ndiv.float_right {\n    float: right;\n}\ncanvas.slider_range {\n    width: 100%;\n    height: 100px;\n    position: absolute;\n    left: 0px;\n}\ndiv.slider_range_color {\n    background-color: #e0e6ca; /* slider range color */\n    display: none;\n}\n</style>\n\n<div class=\"main\">\n  <div id=\"tableInfo\">\n    <div class=\"float_left\">Showing <span id=\"listStart\"></span>..<span id=\"listEnd\"></span> of <span id=\"totalSize\"> entries</span></div>\n    <div class=\"float_right\">Page size: <select id=\"pageSizeSelect\"></select></div>\n  </div>\n  <div id=\"paginationTop\"></div>\n  <div id=\"tableBody\"></div>\n  <div id=\"paginationBottom\"></div>\n</div>\n";
-},"useData":true}],
+},"useData":true}]
 ];
 
-defineStanzaElement(tablePagination, {metadata, templates, outer, url: import.meta.url});
+var css = "";
+
+defineStanzaElement(tablePagination, {metadata, templates, css, url: import.meta.url});
 //# sourceMappingURL=table_pagination_at_once.js.map

@@ -1,4 +1,4 @@
-import { d as defineStanzaElement } from './stanza-element-dea19264.js';
+import { d as defineStanzaElement } from './stanza-element-e6f964f6.js';
 
 function tableBody(stanza, params) {
     let formBody = [];
@@ -49,14 +49,60 @@ function tableBody(stanza, params) {
     });
 }
 
-const metadata = {"@context":{"stanza":"http://togostanza.org/resource/stanza#"},"@id":"table_body","stanza:label":"table body for pagination","stanza:definition":"Greeting.","stanza:parameter":[{"stanza:key":"table_data_api","stanza:example":"https://sparql-support.dbcls.jp/rest/api/protein_list","stanza:description":"table data api","stanza:required":true},{"stanza:key":"limit","stanza:example":"10","stanza:description":"table page size","stanza:required":true},{"stanza:key":"offset","stanza:example":"0","stanza:description":"page numbere","stanza:required":true},{"stanza:key":"params","stanza:example":"dataset='DS801_1'","stanza:description":"parameters for table data api","stanza:required":false}],"stanza:usage":"<togostanza-table_body></togostanza-table_body>","stanza:type":"Stanza","stanza:context":"","stanza:display":"","stanza:provider":"provider of this stanza","stanza:license":"","stanza:author":"author name","stanza:address":"name@example.org","stanza:contributor":[],"stanza:created":"2020-05-27","stanza:updated":"2020-05-27"};
-const outer    = null;
+var metadata = {
+	"@context": {
+	stanza: "http://togostanza.org/resource/stanza#"
+},
+	"@id": "table_body",
+	"stanza:label": "table body for pagination",
+	"stanza:definition": "Greeting.",
+	"stanza:parameter": [
+	{
+		"stanza:key": "table_data_api",
+		"stanza:example": "https://sparql-support.dbcls.jp/rest/api/protein_list",
+		"stanza:description": "table data api",
+		"stanza:required": true
+	},
+	{
+		"stanza:key": "limit",
+		"stanza:example": "10",
+		"stanza:description": "table page size",
+		"stanza:required": true
+	},
+	{
+		"stanza:key": "offset",
+		"stanza:example": "0",
+		"stanza:description": "page numbere",
+		"stanza:required": true
+	},
+	{
+		"stanza:key": "params",
+		"stanza:example": "dataset='DS801_1'",
+		"stanza:description": "parameters for table data api",
+		"stanza:required": false
+	}
+],
+	"stanza:usage": "<togostanza-table_body></togostanza-table_body>",
+	"stanza:type": "Stanza",
+	"stanza:context": "",
+	"stanza:display": "",
+	"stanza:provider": "provider of this stanza",
+	"stanza:license": "",
+	"stanza:author": "author name",
+	"stanza:address": "name@example.org",
+	"stanza:contributor": [
+],
+	"stanza:created": "2020-05-27",
+	"stanza:updated": "2020-05-27"
+};
 
-const templates = [
-    ["stanza.html", {"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+var templates = [
+  ["stanza.html", {"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     return "<style>\n  table {\n      width: 100%;\n  }\n  td {\n      padding: 5px 20px 5px 20px;;\n  }\n  th {\n      border-bottom: solid 2px #000000;\n  }\n</style>\n\n<div id=\"renderDiv\"></div>\n";
-},"useData":true}],
+},"useData":true}]
 ];
 
-defineStanzaElement(tableBody, {metadata, templates, outer, url: import.meta.url});
+var css = "";
+
+defineStanzaElement(tableBody, {metadata, templates, css, url: import.meta.url});
 //# sourceMappingURL=table_body.js.map

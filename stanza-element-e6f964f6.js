@@ -2,16 +2,12 @@ var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof win
 
 function createCommonjsModule(fn, basedir, module) {
 	return module = {
-	  path: basedir,
-	  exports: {},
-	  require: function (path, base) {
-      return commonjsRequire(path, (base === undefined || base === null) ? module.path : base);
-    }
+		path: basedir,
+		exports: {},
+		require: function (path, base) {
+			return commonjsRequire(path, (base === undefined || base === null) ? module.path : base);
+		}
 	}, fn(module, module.exports), module.exports;
-}
-
-function getCjsExportFromNamespace (n) {
-	return n && n['default'] || n;
 }
 
 function commonjsRequire () {
@@ -1084,17 +1080,6 @@ var filter = {
 		}
 	}
 };
-var fire = {
-	name: "fire",
-	keywords: [
-	],
-	heights: {
-		"24": {
-			width: 24,
-			path: "<path fill-rule=\"evenodd\" d=\"M12.185 21.5c4.059 0 7.065-2.84 7.065-6.75 0-2.337-1.093-3.489-2.678-5.158l-.021-.023c-1.44-1.517-3.139-3.351-3.649-6.557a6.14 6.14 0 00-1.911 1.76c-.787 1.144-1.147 2.633-.216 4.495.603 1.205.777 2.74-.277 3.794-.657.657-1.762 1.1-2.956.586-.752-.324-1.353-.955-1.838-1.79-.567.706-.954 1.74-.954 2.893 0 3.847 3.288 6.75 7.435 6.75zm2.08-19.873c-.017-.345-.296-.625-.632-.543-2.337.575-6.605 4.042-4.2 8.854.474.946.392 1.675.004 2.062-.64.64-1.874.684-2.875-1.815-.131-.327-.498-.509-.803-.334-1.547.888-2.509 2.86-2.509 4.899 0 4.829 4.122 8.25 8.935 8.25 4.812 0 8.565-3.438 8.565-8.25 0-2.939-1.466-4.482-3.006-6.102-1.61-1.694-3.479-3.476-3.479-7.021z\"></path>"
-		}
-	}
-};
 var flame = {
 	name: "flame",
 	keywords: [
@@ -1107,6 +1092,10 @@ var flame = {
 		"16": {
 			width: 16,
 			path: "<path fill-rule=\"evenodd\" d=\"M7.998 14.5c2.832 0 5-1.98 5-4.5 0-1.463-.68-2.19-1.879-3.383l-.036-.037c-1.013-1.008-2.3-2.29-2.834-4.434-.322.256-.63.579-.864.953-.432.696-.621 1.58-.046 2.73.473.947.67 2.284-.278 3.232-.61.61-1.545.84-2.403.633a2.788 2.788 0 01-1.436-.874A3.21 3.21 0 003 10c0 2.53 2.164 4.5 4.998 4.5zM9.533.753C9.496.34 9.16.009 8.77.146 7.035.75 4.34 3.187 5.997 6.5c.344.689.285 1.218.003 1.5-.419.419-1.54.487-2.04-.832-.173-.454-.659-.762-1.035-.454C2.036 7.44 1.5 8.702 1.5 10c0 3.512 2.998 6 6.498 6s6.5-2.5 6.5-6c0-2.137-1.128-3.26-2.312-4.438-1.19-1.184-2.436-2.425-2.653-4.81z\"></path>"
+		},
+		"24": {
+			width: 24,
+			path: "<path fill-rule=\"evenodd\" d=\"M12.185 21.5c4.059 0 7.065-2.84 7.065-6.75 0-2.337-1.093-3.489-2.678-5.158l-.021-.023c-1.44-1.517-3.139-3.351-3.649-6.557a6.14 6.14 0 00-1.911 1.76c-.787 1.144-1.147 2.633-.216 4.495.603 1.205.777 2.74-.277 3.794-.657.657-1.762 1.1-2.956.586-.752-.324-1.353-.955-1.838-1.79-.567.706-.954 1.74-.954 2.893 0 3.847 3.288 6.75 7.435 6.75zm2.08-19.873c-.017-.345-.296-.625-.632-.543-2.337.575-6.605 4.042-4.2 8.854.474.946.392 1.675.004 2.062-.64.64-1.874.684-2.875-1.815-.131-.327-.498-.509-.803-.334-1.547.888-2.509 2.86-2.509 4.899 0 4.829 4.122 8.25 8.935 8.25 4.812 0 8.565-3.438 8.565-8.25 0-2.939-1.466-4.482-3.006-6.102-1.61-1.694-3.479-3.476-3.479-7.021z\"></path>"
 		}
 	}
 };
@@ -2054,21 +2043,6 @@ var server = {
 		}
 	}
 };
-var settings = {
-	name: "settings",
-	keywords: [
-		"sliders",
-		"filters",
-		"controls",
-		"levels"
-	],
-	heights: {
-		"24": {
-			width: 24,
-			path: "<path fill-rule=\"evenodd\" d=\"M11.31 2.525a9.648 9.648 0 011.38 0c.055.004.135.05.162.16l.351 1.45c.153.628.626 1.08 1.173 1.278.205.074.405.157.6.249a1.832 1.832 0 001.733-.074l1.275-.776c.097-.06.186-.036.228 0 .348.302.674.628.976.976.036.042.06.13 0 .228l-.776 1.274a1.832 1.832 0 00-.074 1.734c.092.195.175.395.248.6.198.547.652 1.02 1.278 1.172l1.45.353c.111.026.157.106.161.161a9.653 9.653 0 010 1.38c-.004.055-.05.135-.16.162l-1.45.351a1.833 1.833 0 00-1.278 1.173 6.926 6.926 0 01-.25.6 1.832 1.832 0 00.075 1.733l.776 1.275c.06.097.036.186 0 .228a9.555 9.555 0 01-.976.976c-.042.036-.13.06-.228 0l-1.275-.776a1.832 1.832 0 00-1.733-.074 6.926 6.926 0 01-.6.248 1.833 1.833 0 00-1.172 1.278l-.353 1.45c-.026.111-.106.157-.161.161a9.653 9.653 0 01-1.38 0c-.055-.004-.135-.05-.162-.16l-.351-1.45a1.833 1.833 0 00-1.173-1.278 6.928 6.928 0 01-.6-.25 1.832 1.832 0 00-1.734.075l-1.274.776c-.097.06-.186.036-.228 0a9.56 9.56 0 01-.976-.976c-.036-.042-.06-.13 0-.228l.776-1.275a1.832 1.832 0 00.074-1.733 6.948 6.948 0 01-.249-.6 1.833 1.833 0 00-1.277-1.172l-1.45-.353c-.111-.026-.157-.106-.161-.161a9.648 9.648 0 010-1.38c.004-.055.05-.135.16-.162l1.45-.351a1.833 1.833 0 001.278-1.173 6.95 6.95 0 01.249-.6 1.832 1.832 0 00-.074-1.734l-.776-1.274c-.06-.097-.036-.186 0-.228.302-.348.628-.674.976-.976.042-.036.13-.06.228 0l1.274.776a1.832 1.832 0 001.734.074 6.95 6.95 0 01.6-.249 1.833 1.833 0 001.172-1.277l.353-1.45c.026-.111.106-.157.161-.161zM12 1c-.268 0-.534.01-.797.028-.763.055-1.345.617-1.512 1.304l-.352 1.45c-.02.078-.09.172-.225.22a8.45 8.45 0 00-.728.303c-.13.06-.246.044-.315.002l-1.274-.776c-.604-.368-1.412-.354-1.99.147-.403.348-.78.726-1.129 1.128-.5.579-.515 1.387-.147 1.99l.776 1.275c.042.069.059.185-.002.315a8.45 8.45 0 00-.302.728c-.05.135-.143.206-.221.225l-1.45.352c-.687.167-1.249.749-1.304 1.512a11.149 11.149 0 000 1.594c.055.763.617 1.345 1.304 1.512l1.45.352c.078.02.172.09.22.225.09.248.191.491.303.729.06.129.044.245.002.314l-.776 1.274c-.368.604-.354 1.412.147 1.99.348.403.726.78 1.128 1.129.579.5 1.387.515 1.99.147l1.275-.776c.069-.042.185-.059.315.002.237.112.48.213.728.302.135.05.206.143.225.221l.352 1.45c.167.687.749 1.249 1.512 1.303a11.125 11.125 0 001.594 0c.763-.054 1.345-.616 1.512-1.303l.352-1.45c.02-.078.09-.172.225-.22.248-.09.491-.191.729-.303.129-.06.245-.044.314-.002l1.274.776c.604.368 1.412.354 1.99-.147.403-.348.78-.726 1.129-1.128.5-.579.515-1.387.147-1.99l-.776-1.275c-.042-.069-.059-.185.002-.315.112-.237.213-.48.302-.728.05-.135.143-.206.221-.225l1.45-.352c.687-.167 1.249-.749 1.303-1.512a11.125 11.125 0 000-1.594c-.054-.763-.616-1.345-1.303-1.512l-1.45-.352c-.078-.02-.172-.09-.22-.225a8.469 8.469 0 00-.303-.728c-.06-.13-.044-.246-.002-.315l.776-1.274c.368-.604.354-1.412-.147-1.99-.348-.403-.726-.78-1.128-1.129-.579-.5-1.387-.515-1.99-.147l-1.275.776c-.069.042-.185.059-.315-.002a8.465 8.465 0 00-.728-.302c-.135-.05-.206-.143-.225-.221l-.352-1.45c-.167-.687-.749-1.249-1.512-1.304A11.149 11.149 0 0012 1zm2.5 11a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.5 0a4 4 0 11-8 0 4 4 0 018 0z\"></path>"
-		}
-	}
-};
 var share = {
 	name: "share",
 	keywords: [
@@ -2483,17 +2457,6 @@ var unmute = {
 		}
 	}
 };
-var unverifed = {
-	name: "unverifed",
-	keywords: [
-	],
-	heights: {
-		"24": {
-			width: 24,
-			path: "<path d=\"M13 16.5a1 1 0 11-2 0 1 1 0 012 0zm-2.517-7.665c.112-.223.268-.424.488-.57C11.186 8.12 11.506 8 12 8c.384 0 .766.118 1.034.319a.953.953 0 01.403.806c0 .48-.218.81-.62 1.186a9.293 9.293 0 01-.409.354 19.8 19.8 0 00-.294.249c-.246.213-.524.474-.738.795l-.126.19V13.5a.75.75 0 001.5 0v-1.12c.09-.1.203-.208.347-.333.063-.055.14-.119.222-.187.166-.14.358-.3.52-.452.536-.5 1.098-1.2 1.098-2.283a2.45 2.45 0 00-1.003-2.006C13.37 6.695 12.658 6.5 12 6.5c-.756 0-1.373.191-1.861.517a2.944 2.944 0 00-.997 1.148.75.75 0 001.341.67z\"></path><path fill-rule=\"evenodd\" d=\"M9.864 1.2a3.61 3.61 0 014.272 0l1.375 1.01c.274.2.593.333.929.384l1.686.259a3.61 3.61 0 013.021 3.02l.259 1.687c.051.336.183.655.384.929l1.01 1.375a3.61 3.61 0 010 4.272l-1.01 1.375a2.11 2.11 0 00-.384.929l-.259 1.686a3.61 3.61 0 01-3.02 3.021l-1.687.259a2.11 2.11 0 00-.929.384l-1.375 1.01a3.61 3.61 0 01-4.272 0l-1.375-1.01a2.11 2.11 0 00-.929-.384l-1.686-.259a3.61 3.61 0 01-3.021-3.02l-.259-1.687a2.11 2.11 0 00-.384-.929L1.2 14.136a3.61 3.61 0 010-4.272l1.01-1.375a2.11 2.11 0 00.384-.929l.259-1.686a3.61 3.61 0 013.02-3.021l1.687-.259a2.11 2.11 0 00.929-.384L9.864 1.2zm3.384 1.209a2.11 2.11 0 00-2.496 0l-1.376 1.01a3.61 3.61 0 01-1.589.658l-1.686.258a2.11 2.11 0 00-1.766 1.766l-.258 1.686a3.61 3.61 0 01-.658 1.59l-1.01 1.375a2.11 2.11 0 000 2.496l1.01 1.376a3.61 3.61 0 01.658 1.589l.258 1.686a2.11 2.11 0 001.766 1.765l1.686.26a3.61 3.61 0 011.59.657l1.375 1.01a2.11 2.11 0 002.496 0l1.376-1.01a3.61 3.61 0 011.589-.658l1.686-.258a2.11 2.11 0 001.765-1.766l.26-1.686a3.61 3.61 0 01.657-1.59l1.01-1.375a2.11 2.11 0 000-2.496l-1.01-1.376a3.61 3.61 0 01-.658-1.589l-.258-1.686a2.11 2.11 0 00-1.766-1.766l-1.686-.258a3.61 3.61 0 01-1.59-.658l-1.375-1.01z\"></path>"
-		}
-	}
-};
 var unverified = {
 	name: "unverified",
 	keywords: [
@@ -2505,6 +2468,10 @@ var unverified = {
 		"16": {
 			width: 16,
 			path: "<path fill-rule=\"evenodd\" d=\"M6.415.52a2.678 2.678 0 013.17 0l.928.68c.153.113.33.186.518.215l1.138.175a2.678 2.678 0 012.241 2.24l.175 1.138c.029.187.102.365.215.518l.68.928a2.678 2.678 0 010 3.17l-.68.928a1.179 1.179 0 00-.215.518l-.175 1.138a2.678 2.678 0 01-2.241 2.241l-1.138.175a1.179 1.179 0 00-.518.215l-.928.68a2.678 2.678 0 01-3.17 0l-.928-.68a1.179 1.179 0 00-.518-.215L3.83 14.41a2.678 2.678 0 01-2.24-2.24l-.175-1.138a1.179 1.179 0 00-.215-.518l-.68-.928a2.678 2.678 0 010-3.17l.68-.928a1.17 1.17 0 00.215-.518l.175-1.14a2.678 2.678 0 012.24-2.24l1.138-.175c.187-.029.365-.102.518-.215l.928-.68zm2.282 1.209a1.178 1.178 0 00-1.394 0l-.928.68a2.678 2.678 0 01-1.18.489l-1.136.174a1.178 1.178 0 00-.987.987l-.174 1.137a2.678 2.678 0 01-.489 1.18l-.68.927c-.305.415-.305.98 0 1.394l.68.928c.256.348.423.752.489 1.18l.174 1.136c.078.51.478.909.987.987l1.137.174c.427.066.831.233 1.18.489l.927.68c.415.305.98.305 1.394 0l.928-.68a2.678 2.678 0 011.18-.489l1.136-.174c.51-.078.909-.478.987-.987l.174-1.137c.066-.427.233-.831.489-1.18l.68-.927c.305-.415.305-.98 0-1.394l-.68-.928a2.678 2.678 0 01-.489-1.18l-.174-1.136a1.178 1.178 0 00-.987-.987l-1.137-.174a2.678 2.678 0 01-1.18-.489l-.927-.68zM9 11a1 1 0 11-2 0 1 1 0 012 0zM6.92 6.085c.081-.16.19-.299.34-.398.145-.097.371-.187.74-.187.28 0 .553.087.738.225A.613.613 0 019 6.25c0 .177-.04.264-.077.318a.956.956 0 01-.277.245c-.076.051-.158.1-.258.161l-.007.004c-.093.056-.204.122-.313.195a2.416 2.416 0 00-.692.661.75.75 0 001.248.832.956.956 0 01.276-.245 6.3 6.3 0 01.26-.16l.006-.004c.093-.057.204-.123.313-.195.222-.149.487-.355.692-.662.214-.32.329-.702.329-1.15 0-.76-.36-1.348-.862-1.725A2.76 2.76 0 008 4c-.631 0-1.154.16-1.572.438-.413.276-.68.638-.849.977a.75.75 0 001.342.67z\"></path>"
+		},
+		"24": {
+			width: 24,
+			path: "<path d=\"M13 16.5a1 1 0 11-2 0 1 1 0 012 0zm-2.517-7.665c.112-.223.268-.424.488-.57C11.186 8.12 11.506 8 12 8c.384 0 .766.118 1.034.319a.953.953 0 01.403.806c0 .48-.218.81-.62 1.186a9.293 9.293 0 01-.409.354 19.8 19.8 0 00-.294.249c-.246.213-.524.474-.738.795l-.126.19V13.5a.75.75 0 001.5 0v-1.12c.09-.1.203-.208.347-.333.063-.055.14-.119.222-.187.166-.14.358-.3.52-.452.536-.5 1.098-1.2 1.098-2.283a2.45 2.45 0 00-1.003-2.006C13.37 6.695 12.658 6.5 12 6.5c-.756 0-1.373.191-1.861.517a2.944 2.944 0 00-.997 1.148.75.75 0 001.341.67z\"></path><path fill-rule=\"evenodd\" d=\"M9.864 1.2a3.61 3.61 0 014.272 0l1.375 1.01c.274.2.593.333.929.384l1.686.259a3.61 3.61 0 013.021 3.02l.259 1.687c.051.336.183.655.384.929l1.01 1.375a3.61 3.61 0 010 4.272l-1.01 1.375a2.11 2.11 0 00-.384.929l-.259 1.686a3.61 3.61 0 01-3.02 3.021l-1.687.259a2.11 2.11 0 00-.929.384l-1.375 1.01a3.61 3.61 0 01-4.272 0l-1.375-1.01a2.11 2.11 0 00-.929-.384l-1.686-.259a3.61 3.61 0 01-3.021-3.02l-.259-1.687a2.11 2.11 0 00-.384-.929L1.2 14.136a3.61 3.61 0 010-4.272l1.01-1.375a2.11 2.11 0 00.384-.929l.259-1.686a3.61 3.61 0 013.02-3.021l1.687-.259a2.11 2.11 0 00.929-.384L9.864 1.2zm3.384 1.209a2.11 2.11 0 00-2.496 0l-1.376 1.01a3.61 3.61 0 01-1.589.658l-1.686.258a2.11 2.11 0 00-1.766 1.766l-.258 1.686a3.61 3.61 0 01-.658 1.59l-1.01 1.375a2.11 2.11 0 000 2.496l1.01 1.376a3.61 3.61 0 01.658 1.589l.258 1.686a2.11 2.11 0 001.766 1.765l1.686.26a3.61 3.61 0 011.59.657l1.375 1.01a2.11 2.11 0 002.496 0l1.376-1.01a3.61 3.61 0 011.589-.658l1.686-.258a2.11 2.11 0 001.765-1.766l.26-1.686a3.61 3.61 0 01.657-1.59l1.01-1.375a2.11 2.11 0 000-2.496l-1.01-1.376a3.61 3.61 0 01-.658-1.589l-.258-1.686a2.11 2.11 0 00-1.766-1.766l-1.686-.258a3.61 3.61 0 01-1.59-.658l-1.375-1.01z\"></path>"
 		}
 	}
 };
@@ -3234,14 +3201,7 @@ var data = {
 		"16": {
 			width: 16,
 			path: "<path fill-rule=\"evenodd\" d=\"M.143 2.31a.75.75 0 011.047-.167l14.5 10.5a.75.75 0 11-.88 1.214l-2.248-1.628C11.346 13.19 9.792 14 8 14c-1.981 0-3.67-.992-4.933-2.078C1.797 10.832.88 9.577.43 8.9a1.618 1.618 0 010-1.797c.353-.533.995-1.42 1.868-2.305L.31 3.357A.75.75 0 01.143 2.31zm3.386 3.378a14.21 14.21 0 00-1.85 2.244.12.12 0 00-.022.068c0 .021.006.045.022.068.412.621 1.242 1.75 2.366 2.717C5.175 11.758 6.527 12.5 8 12.5c1.195 0 2.31-.488 3.29-1.191L9.063 9.695A2 2 0 016.058 7.52l-2.53-1.832zM8 3.5c-.516 0-1.017.09-1.499.251a.75.75 0 11-.473-1.423A6.23 6.23 0 018 2c1.981 0 3.67.992 4.933 2.078 1.27 1.091 2.187 2.345 2.637 3.023a1.619 1.619 0 010 1.798c-.11.166-.248.365-.41.587a.75.75 0 11-1.21-.887c.148-.201.272-.382.371-.53a.119.119 0 000-.137c-.412-.621-1.242-1.75-2.366-2.717C10.825 4.242 9.473 3.5 8 3.5z\"></path>"
-		}
-	}
-},
-	"eye-slash": {
-	name: "eye-slash",
-	keywords: [
-	],
-	heights: {
+		},
 		"24": {
 			width: 24,
 			path: "<path d=\"M8.052 5.837A9.715 9.715 0 0112 5c2.955 0 5.309 1.315 7.06 2.864 1.756 1.553 2.866 3.307 3.307 4.08a.11.11 0 01.016.055.122.122 0 01-.017.06 16.766 16.766 0 01-1.53 2.218.75.75 0 101.163.946 18.253 18.253 0 001.67-2.42 1.607 1.607 0 00.001-1.602c-.485-.85-1.69-2.757-3.616-4.46C18.124 5.034 15.432 3.5 12 3.5c-1.695 0-3.215.374-4.552.963a.75.75 0 00.604 1.373z\"></path><path fill-rule=\"evenodd\" d=\"M19.166 17.987C17.328 19.38 14.933 20.5 12 20.5c-3.432 0-6.125-1.534-8.054-3.24C2.02 15.556.814 13.648.33 12.798a1.606 1.606 0 01.001-1.6A18.305 18.305 0 013.648 7.01L1.317 5.362a.75.75 0 11.866-1.224l20.5 14.5a.75.75 0 11-.866 1.224l-2.651-1.875zM4.902 7.898c-1.73 1.541-2.828 3.273-3.268 4.044a.118.118 0 00-.017.059c0 .015.003.034.016.055.441.774 1.551 2.527 3.307 4.08C6.69 17.685 9.045 19 12 19c2.334 0 4.29-.82 5.874-1.927l-3.516-2.487a3.5 3.5 0 01-5.583-3.949L4.902 7.899z\"></path>"
@@ -3376,17 +3336,6 @@ var data = {
 		}
 	}
 },
-	"file-symlink": {
-	name: "file-symlink",
-	keywords: [
-	],
-	heights: {
-		"24": {
-			width: 24,
-			path: "<path fill-rule=\"evenodd\" d=\"M3 3a2 2 0 012-2h9.982a2 2 0 011.414.586l4.018 4.018A2 2 0 0121 7.018V21a2 2 0 01-2 2H4.75a.75.75 0 010-1.5H19a.5.5 0 00.5-.5V8.5h-4a2 2 0 01-2-2v-4H5a.5.5 0 00-.5.5v6.25a.75.75 0 01-1.5 0V3zm12-.5v4a.5.5 0 00.5.5h4a.5.5 0 00-.146-.336l-4.018-4.018A.5.5 0 0015 2.5zm-5.692 12l-2.104-2.236a.75.75 0 111.092-1.028l3.294 3.5a.75.75 0 010 1.028l-3.294 3.5a.75.75 0 11-1.092-1.028L9.308 16H4.09a2.59 2.59 0 00-2.59 2.59v3.16a.75.75 0 01-1.5 0v-3.16a4.09 4.09 0 014.09-4.09h5.218z\"></path>"
-		}
-	}
-},
 	"file-symlink-file": {
 	name: "file-symlink-file",
 	keywords: [
@@ -3397,6 +3346,10 @@ var data = {
 		"16": {
 			width: 16,
 			path: "<path fill-rule=\"evenodd\" d=\"M2 1.75C2 .784 2.784 0 3.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0112.25 15h-7a.75.75 0 010-1.5h7a.25.25 0 00.25-.25V6H9.75A1.75 1.75 0 018 4.25V1.5H3.75a.25.25 0 00-.25.25V4.5a.75.75 0 01-1.5 0V1.75zm7.5-.188V4.25c0 .138.112.25.25.25h2.688a.252.252 0 00-.011-.013L9.513 1.573a.248.248 0 00-.013-.011zm-8 10.675a2.25 2.25 0 012.262-2.25L4 9.99v1.938c0 .218.26.331.42.183l2.883-2.677a.25.25 0 000-.366L4.42 6.39a.25.25 0 00-.42.183V8.49l-.23-.001A3.75 3.75 0 000 12.238v1.012a.75.75 0 001.5 0v-1.013z\"></path>"
+		},
+		"24": {
+			width: 24,
+			path: "<path fill-rule=\"evenodd\" d=\"M3 3a2 2 0 012-2h9.982a2 2 0 011.414.586l4.018 4.018A2 2 0 0121 7.018V21a2 2 0 01-2 2H4.75a.75.75 0 010-1.5H19a.5.5 0 00.5-.5V8.5h-4a2 2 0 01-2-2v-4H5a.5.5 0 00-.5.5v6.25a.75.75 0 01-1.5 0V3zm12-.5v4a.5.5 0 00.5.5h4a.5.5 0 00-.146-.336l-4.018-4.018A.5.5 0 0015 2.5zm-5.692 12l-2.104-2.236a.75.75 0 111.092-1.028l3.294 3.5a.75.75 0 010 1.028l-3.294 3.5a.75.75 0 11-1.092-1.028L9.308 16H4.09a2.59 2.59 0 00-2.59 2.59v3.16a.75.75 0 01-1.5 0v-3.16a4.09 4.09 0 014.09-4.09h5.218z\"></path>"
 		}
 	}
 },
@@ -3418,7 +3371,6 @@ var data = {
 	}
 },
 	filter: filter,
-	fire: fire,
 	flame: flame,
 	fold: fold,
 	"fold-down": {
@@ -4079,7 +4031,6 @@ var data = {
 },
 	search: search,
 	server: server,
-	settings: settings,
 	share: share,
 	"share-android": {
 	name: "share-android",
@@ -4333,7 +4284,6 @@ var data = {
 	unfold: unfold,
 	unlock: unlock,
 	unmute: unmute,
-	unverifed: unverifed,
 	unverified: unverified,
 	upload: upload,
 	verified: verified,
@@ -4372,133 +4322,6 @@ var data = {
 },
 	zap: zap
 };
-
-var data$1 = /*#__PURE__*/Object.freeze({
-	__proto__: null,
-	alert: alert,
-	archive: archive,
-	beaker: beaker,
-	bell: bell,
-	bold: bold,
-	book: book,
-	bookmark: bookmark,
-	briefcase: briefcase,
-	broadcast: broadcast,
-	browser: browser,
-	bug: bug,
-	calendar: calendar,
-	check: check,
-	checklist: checklist,
-	circle: circle,
-	clippy: clippy,
-	clock: clock,
-	code: code,
-	comment: comment,
-	commit: commit,
-	copy: copy,
-	cpu: cpu,
-	dash: dash,
-	database: database,
-	diff: diff,
-	dot: dot,
-	download: download,
-	ellipsis: ellipsis,
-	eye: eye,
-	file: file,
-	filter: filter,
-	fire: fire,
-	flame: flame,
-	fold: fold,
-	gear: gear,
-	gift: gift,
-	globe: globe,
-	grabber: grabber,
-	graph: graph,
-	heading: heading,
-	heart: heart,
-	history: history,
-	home: home,
-	hourglass: hourglass,
-	hubot: hubot,
-	image: image,
-	inbox: inbox,
-	infinity: infinity,
-	info: info,
-	insights: insights,
-	italic: italic,
-	key: key,
-	law: law,
-	link: link,
-	location: location,
-	lock: lock,
-	mail: mail,
-	markdown: markdown,
-	megaphone: megaphone,
-	mention: mention,
-	meter: meter,
-	milestone: milestone,
-	mirror: mirror,
-	moon: moon,
-	mute: mute,
-	note: note,
-	octoface: octoface,
-	organization: organization,
-	paintbrush: paintbrush,
-	pencil: pencil,
-	people: people,
-	person: person,
-	pin: pin,
-	play: play,
-	plug: plug,
-	plus: plus,
-	project: project,
-	pulse: pulse,
-	question: question,
-	quote: quote,
-	reply: reply,
-	repo: repo,
-	report: report,
-	rocket: rocket,
-	rss: rss,
-	ruby: ruby,
-	search: search,
-	server: server,
-	settings: settings,
-	share: share,
-	shield: shield,
-	skip: skip,
-	smiley: smiley,
-	square: square,
-	squirrel: squirrel,
-	star: star,
-	stop: stop,
-	stopwatch: stopwatch,
-	sun: sun,
-	sync: sync,
-	tab: tab,
-	tag: tag,
-	tasklist: tasklist,
-	telescope: telescope,
-	terminal: terminal,
-	thumbsdown: thumbsdown,
-	thumbsup: thumbsup,
-	tools: tools,
-	trash: trash,
-	trashcan: trashcan,
-	typography: typography,
-	unfold: unfold,
-	unlock: unlock,
-	unmute: unmute,
-	unverifed: unverifed,
-	unverified: unverified,
-	upload: upload,
-	verified: verified,
-	versions: versions,
-	workflow: workflow,
-	x: x,
-	zap: zap,
-	'default': data
-});
 
 /*
 object-assign
@@ -4589,11 +4412,9 @@ var objectAssign = shouldUseNative() ? Object.assign : function (target, source)
 	return to;
 };
 
-var data$2 = getCjsExportFromNamespace(data$1);
-
 const DEFAULT_HEIGHT = 16;
 
-for (const key of Object.keys(data$2)) {
+for (const key of Object.keys(data)) {
   // Returns a string representation of html attributes
   const htmlAttributes = (icon, defaultOptions, options) => {
     const attributes = [];
@@ -4635,32 +4456,32 @@ for (const key of Object.keys(data$2)) {
   };
 
   // Set the symbol for easy access
-  data$2[key].symbol = key;
+  data[key].symbol = key;
 
   // Set options for each icon height
-  for (const height of Object.keys(data$2[key].heights)) {
-    data$2[key].heights[height].options = {
+  for (const height of Object.keys(data[key].heights)) {
+    data[key].heights[height].options = {
       version: '1.1',
-      width: data$2[key].heights[height].width,
+      width: data[key].heights[height].width,
       height: parseInt(height),
-      viewBox: `0 0 ${data$2[key].heights[height].width} ${height}`,
+      viewBox: `0 0 ${data[key].heights[height].width} ${height}`,
       class: `octicon octicon-${key}`,
       'aria-hidden': 'true'
     };
   }
 
   // Function to return an SVG object
-  data$2[key].toSVG = function(options = {}) {
+  data[key].toSVG = function(options = {}) {
     const {height, width} = options;
-    const naturalHeight = closestNaturalHeight(Object.keys(data$2[key].heights), height || width || DEFAULT_HEIGHT);
-    return `<svg ${htmlAttributes(data$2[key], data$2[key].heights[naturalHeight].options, options)}>${
-      data$2[key].heights[naturalHeight].path
+    const naturalHeight = closestNaturalHeight(Object.keys(data[key].heights), height || width || DEFAULT_HEIGHT);
+    return `<svg ${htmlAttributes(data[key], data[key].heights[naturalHeight].options, options)}>${
+      data[key].heights[naturalHeight].path
     }</svg>`
   };
 }
 
 // Import data into exports
-var octicons = data$2;
+var octicons = data;
 
 function closestNaturalHeight(naturalHeights, height) {
   return naturalHeights
@@ -6268,7 +6089,7 @@ function unwrapValueFromBinding(queryResult) {
   });
 }
 
-function defineStanzaElement(main, {metadata, templates, outer, url}) {
+async function defineStanzaElement(main, {metadata, templates, css, url}) {
   const id        = metadata['@id'];
   const paramKeys = metadata['stanza:parameter'].map(param => param['stanza:key']);
 
@@ -6284,14 +6105,19 @@ function defineStanzaElement(main, {metadata, templates, outer, url}) {
         this.render();
       }, 50);
 
-      ensureOuterInserted(id, outer);
       ensureAboutLinkElementDefined();
 
       this.attachShadow({mode: 'open'});
 
       this.stanza = new Stanza(this, metadata, templates, url);
 
-      applyDefaultStyles(this, metadata['stanza:style']);
+      const hostStyle = document.createElement('style');
+      hostStyle.append(cssVariableDefaults(metadata['stanza:style']) || '');
+      this.append(hostStyle);
+
+      const shadowStyle = document.createElement('style');
+      shadowStyle.append(css || '');
+      this.shadowRoot.append(shadowStyle);
     }
 
     connectedCallback() {
@@ -6318,42 +6144,14 @@ function defineStanzaElement(main, {metadata, templates, outer, url}) {
   customElements.define(`togostanza-${id}`, StanzaElement);
 }
 
-function applyDefaultStyles(el, defs) {
-  if (!defs) { return; }
+function cssVariableDefaults(defs) {
+  if (!defs) { return null; }
 
-  const style = document.createElement('style');
-
-  style.textContent = defaultOutdent`
+  return defaultOutdent`
     :root {
     ${defs.map(def => `  ${def['stanza:key']}: ${def['stanza:default']};`).join('\n')}
     }
   `;
-
-  el.append(style);
-}
-
-function ensureOuterInserted(id, outer) {
-  if (!outer) { return; }
-  if (document.querySelector(`[data-togostanza-outer="${id}"]`)) { return; }
-
-  const outerEl = document.createElement('div');
-
-  outerEl.setAttribute('data-togostanza-outer', id);
-  outerEl.innerHTML = outer;
-
-  document.body.append(outerEl);
-
-  outerEl.querySelectorAll('script').forEach((orig) => {
-    const el = document.createElement('script');
-
-    el.textContent = orig.textContent;
-
-    Array.from(orig.attributes).forEach((attr) => {
-      el.setAttribute(attr.nodeName, attr.textContent);
-    });
-
-    orig.replaceWith(el);
-  });
 }
 
 function ensureAboutLinkElementDefined() {
@@ -6364,4 +6162,4 @@ function ensureAboutLinkElementDefined() {
 }
 
 export { defineStanzaElement as d };
-//# sourceMappingURL=stanza-element-dea19264.js.map
+//# sourceMappingURL=stanza-element-e6f964f6.js.map

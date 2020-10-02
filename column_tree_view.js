@@ -1,4 +1,4 @@
-import { d as defineStanzaElement } from './stanza-element-dea19264.js';
+import { d as defineStanzaElement } from './stanza-element-e6f964f6.js';
 
 function columnTreeView(stanza, params) {
 
@@ -226,14 +226,72 @@ function columnTreeView(stanza, params) {
 	
 }
 
-const metadata = {"@context":{"stanza":"http://togostanza.org/resource/stanza#"},"@id":"column_tree_view","stanza:label":"Column tree view","stanza:definition":"Column viewer metastanza for tree and DAG structures.","stanza:parameter":[{"stanza:key":"endpoint","stanza:example":"https://integbio.jp/rdf/sparql","stanza:description":"endpoint","stanza:required":true},{"stanza:key":"root","stanza:example":"http://identifiers.org/taxonomy/131567","stanza:description":"root node","stanza:required":true},{"stanza:key":"graph","stanza:example":"http://integbio.jp/rdf/ontology/taxonomy","stanza:description":"target graph","stanza:required":false},{"stanza:key":"subclass","stanza:example":"","stanza:description":"target subclass predicate (default: rdfs:subClassOf)","stanza:required":false},{"stanza:key":"label","stanza:example":"","stanza:description":"target label predicate (default: rdfs:label)","stanza:required":false},{"stanza:key":"search","stanza:example":"1","stanza:description":"search method. 1: regex (default), 2: bif:contains(exact), 3: bif:contains(partial).","stanza:required":false}],"stanza:usage":"<togostanza-column_tree_view endpoint='https://integbio.jp/rdf/sparql' root='http://identifiers.org/taxonomy/131567'></togostanza-column_tree_view>","stanza:type":"MetaStanza","stanza:context":"","stanza:display":"","stanza:provider":"DBCLS","stanza:license":"MIT","stanza:author":"Moriya, Yuki","stanza:address":"moriya@dbcls.rois.ac.jp","stanza:contributor":[],"stanza:created":"2020-07-21","stanza:updated":"2020-07-21"};
-const outer    = null;
+var metadata = {
+	"@context": {
+	stanza: "http://togostanza.org/resource/stanza#"
+},
+	"@id": "column_tree_view",
+	"stanza:label": "Column tree view",
+	"stanza:definition": "Column viewer metastanza for tree and DAG structures.",
+	"stanza:parameter": [
+	{
+		"stanza:key": "endpoint",
+		"stanza:example": "https://integbio.jp/rdf/sparql",
+		"stanza:description": "endpoint",
+		"stanza:required": true
+	},
+	{
+		"stanza:key": "root",
+		"stanza:example": "http://identifiers.org/taxonomy/131567",
+		"stanza:description": "root node",
+		"stanza:required": true
+	},
+	{
+		"stanza:key": "graph",
+		"stanza:example": "http://integbio.jp/rdf/ontology/taxonomy",
+		"stanza:description": "target graph",
+		"stanza:required": false
+	},
+	{
+		"stanza:key": "subclass",
+		"stanza:example": "",
+		"stanza:description": "target subclass predicate (default: rdfs:subClassOf)",
+		"stanza:required": false
+	},
+	{
+		"stanza:key": "label",
+		"stanza:example": "",
+		"stanza:description": "target label predicate (default: rdfs:label)",
+		"stanza:required": false
+	},
+	{
+		"stanza:key": "search",
+		"stanza:example": "1",
+		"stanza:description": "search method. 1: regex (default), 2: bif:contains(exact), 3: bif:contains(partial).",
+		"stanza:required": false
+	}
+],
+	"stanza:usage": "<togostanza-column_tree_view endpoint='https://integbio.jp/rdf/sparql' root='http://identifiers.org/taxonomy/131567'></togostanza-column_tree_view>",
+	"stanza:type": "MetaStanza",
+	"stanza:context": "",
+	"stanza:display": "",
+	"stanza:provider": "DBCLS",
+	"stanza:license": "MIT",
+	"stanza:author": "Moriya, Yuki",
+	"stanza:address": "moriya@dbcls.rois.ac.jp",
+	"stanza:contributor": [
+],
+	"stanza:created": "2020-07-21",
+	"stanza:updated": "2020-07-21"
+};
 
-const templates = [
-    ["stanza.html", {"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+var templates = [
+  ["stanza.html", {"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     return "<style>\n  div#renderDiv{\n      overflow-x: auto;\n      white-space: nowrap;\n      border: solid 3px #888888;\n  }\n  div.column {\n      min-width: 300px;\n      max-width: 300px;\n      max-height: 300px;\n      min-height: 300px;\n      display: inline-flex;\n      overflow-y: auto;\n      border: solid 1px #888888;\n      margin-right: -1px;\n  }\n  div.column ul {\n      width: 300px;\n      padding: 0px;\n      margin: 0px;\n  }\n  div.column li {\n      max-width: 300px;\n      padding: 5px 10px 5px 10px;\n      margin: 0px;\n  }\n  li div.label_inline {\n      width: 260px;\n      margin: 0px;\n      padding: 0px;\n      display: inline-block;\n  }\n  li div.label {\n      width: 260px;\n      overflow: hidden;\n      text-overflow: ellipsis;\n      white-space: nowrap;\n      margin: 0px;\n      padding: 0px;\n      display: block;\n  }\n  li.clickable {\n      color: #0f6385;\n      cursor: pointer;\n  }\n  li.clickable_sp {\n      cursor: pointer;\n  }\n  li.clickable::after{\n      content: '';\n      width: 7px;\n      height: 7px;\n      border: 0px;\n      border-top: solid 2px #0f6385;\n      border-right: solid 2px #0f6385;\n      transform: rotate(45deg);\n      position: relative;\n      top: 4px;\n      float: right;\n}\n  li.selected {\n      background-color: #dddddd;\n  }\n  div#header {\n      text-align: right;\n      margin-bottom: 10px;\n  }\n  div#dataInfo {\n      line-height: 20px;\n  }\n  div#pulldown {\n      position: absolute;\n      background-color: #eeeeee;\n      border: solid 1px #888888;\n      display: none;\n      max-height: 300px;\n      overflow-y: auto;\n  }\n  div#pulldown ul {\n      list-style-type: none;\n      margin: 5px 5px 5px 5px;\n      padding: 0px 0px 0px 0px;\n  }\n  div#pulldown li {\n      width: auto;\n      font-size: 14px;\n      cursor: pointer;\n  }\n</style>\n\n<div id=\"header\">\n  <input type=\"text\" size=\"50\" id=\"label_keywords\">\n  <input type=\"button\" id=\"word_search\" value=\"search\">\n</div>\n<div id=\"renderDiv\"></div>\n<div id=\"dataInfo\"></div>\n<div id=\"pulldown\"></div>\n";
-},"useData":true}],
+},"useData":true}]
 ];
 
-defineStanzaElement(columnTreeView, {metadata, templates, outer, url: import.meta.url});
+var css = "";
+
+defineStanzaElement(columnTreeView, {metadata, templates, css, url: import.meta.url});
 //# sourceMappingURL=column_tree_view.js.map
